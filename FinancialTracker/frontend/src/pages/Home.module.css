@@ -1,0 +1,303 @@
+.App {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    padding-top: 70px;
+}
+
+
+.header {
+    /*background-color: #fff;*/
+    /*border-bottom: 1px solid #e0e0e0;*/
+    /*padding: 20px 40px;*/
+    /*display: flex;*/
+    /*justify-content: space-between;*/
+    /*align-items: center;*/
+    /*box-shadow: 0 2px 5px rgba(0,0,0,0.1);*/
+    position: fixed; /* This makes the header stay in place */
+    top: 0; /* Aligns the header to the top of the page */
+    left: 0; /* Aligns the header to the left of the page */
+    width: 96%; /* Ensures the header extends across the full width of the page */
+    z-index: 1000; /* Ensures the header stays above other content */
+    background-color: #fff; /* Given you have a white background */
+    border-bottom: 1px solid #e0e0e0;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.searchBarContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 80px);
+    margin: 0 auto;
+}
+
+.searchBar {
+    width: 50%;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    font-size: 16px;
+    outline: none;
+}
+
+.searchBar:focus {
+    border-color: #0056b3;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.bookContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 40px;
+    gap: 20px;
+}
+
+.book {
+    background: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.book:hover {
+    transform: translateY(-5px);
+}
+
+.book h4, .book p {
+    margin: 0;
+    padding: 0;
+}
+
+.book p {
+    color: #555;
+    font-size: 14px;
+}
+
+.book img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.headerIcon {
+    height: 50px;
+    cursor: pointer;
+}
+.user-info {
+    cursor: pointer !important;
+}
+
+
+.viewDetailsButton {
+    background-color: #007bff; /* Blue color, you can change this to match your design */
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* 10px top/bottom padding, 20px left/right */
+    font-size: 14px; /* Font size */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor to indicate it's clickable */
+    text-align: center; /* Center the text */
+    display: block; /* Make the button a block to fit the width */
+    width: 100%; /* Full width of its container */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow for some depth */
+    margin-top: 10px; /* Margin at the top for spacing */
+    text-decoration: none; /* Remove text decoration */
+    transition: background-color 0.2s ease; /* Smooth transition for hover effect */
+}
+
+.viewDetailsButton:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.bookImg {
+    transition: transform 0.3s ease; /* Smooth transition for transform */
+    transform: rotateY(0); /* Start with the image flat */
+    display: block;
+}
+
+.bookImg:hover {
+    transform: rotateY(13deg); /* Scale the image up slightly when hovered */
+}
+
+.book {
+    perspective: 1000px; /* Set the perspective for 3D effects */
+}
+h1 {
+    padding-top: 200px;
+}
+.container {
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    /*padding-top: 20px; !* Adjust the amount of space as needed *!*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+
+
+.videoWrapper {
+    width: 100%; /* Use 100% to make it responsive */
+    max-width: 640px; /* Adjust the max-width as needed */
+    margin-top: 20px; /* Space at the top */
+    display: flex; /* Use flex to center the video */
+    justify-content: center; /* Center the video horizontally */
+}
+
+.viewDetailsButton2 {
+    background-color: #007bff; /* Blue color, you can change this to match your design */
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* 10px top/bottom padding, 20px left/right */
+    font-size: 14px; /* Font size */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor to indicate it's clickable */
+    text-align: center; /* Center the text */
+    display: inline-block; /* Only take up as much space as needed */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow for some depth */
+    margin-top: 10px; /* Margin at the top for spacing */
+    text-decoration: none; /* Remove text decoration */
+    transition: background-color 0.2s ease; /* Smooth transition for hover effect */
+}
+
+@media (max-width: 768px) {
+    .searchBar {
+        width: 80%; /* Wider search bar on smaller screens */
+    }
+
+    .book {
+        width: 45%; /* Books take more space, two in a row instead of three */
+    }
+    .header {
+        padding: 15px 20px; /* Reduced padding on smaller screens */
+        width: 100%; /* Adjust width to be 100% to use full viewport width */
+    }
+    .userIcon {
+        padding-right: 20px;
+    }
+}
+
+/* Adjustments for even smaller screens */
+@media (max-width: 480px) {
+    .searchBar {
+        width: 90%; /* Almost full width for the search bar */
+    }
+
+    .book {
+        width: 90%; /* Each book takes almost full width, only one book per row */
+        margin-bottom: 30px; /* More space between books */
+    }
+
+    /* More adjustments for the smallest screens */
+    .header {
+        padding: 15px 20px; /* Less padding in the header */
+    }
+
+
+}
+
+.box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 45%;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+
+.App {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    padding-top: 70px;
+    min-height: 100vh; /* Ensure the app takes the full height */
+}
+
+.mainContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 70px); /* Full height minus header height */
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 30px;
+    width: 300px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.notLoggedInContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.viewDetailsButton2 {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.viewDetailsButton2:hover {
+    background-color: #0056b3;
+}

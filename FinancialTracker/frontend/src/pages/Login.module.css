@@ -1,0 +1,79 @@
+.container {
+    /* Replace this with your styles for the container */
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.formContainer {
+    /* Replace this with your styles for the form container */
+}
+
+.title {
+    /* Replace this with your styles for the title */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form {
+    /* Replace this with your styles for the form */
+}
+
+.formGroup {
+    /* Replace this with your styles for the form groups */
+    margin-bottom: 15px;
+}
+
+.label {
+    /* Replace this with your styles for the labels */
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input {
+    /* Replace this with your styles for the inputs */
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.button {
+    /* Replace this with your styles for the buttons */
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.buttonLink {
+    /* Replace this with your styles for the button-like links */
+    background: none;
+    color: #007bff;
+    border: none;
+    cursor: pointer;
+}
+
+.error {
+    /* Replace this with your styles for error messages */
+    color: red;
+    text-align: center;
+}
+
+.switchForm {
+    /* Replace this with your styles for the switch form section */
+    text-align: center;
+    margin-top: 20px;
+}

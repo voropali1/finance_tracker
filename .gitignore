@@ -1,0 +1,45 @@
+HELP.md
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### Maven ###
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+!.mvn/wrapper/maven-wrapper.jar
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# Ignore all log files and directories
+*.log
+logs/
+
+# Ignore artifact directory
+target/
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Ignore Gradle project-specific cache directory
+.gradle

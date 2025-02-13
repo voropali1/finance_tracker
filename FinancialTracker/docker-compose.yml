@@ -1,0 +1,143 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - "3000:80"  # Maps host port 3000 to container's port 80 (served by nginx)
+    networks:
+      - financial-network
+
+  eureka-server:
+    build:
+      context: ./EurekaServer
+      dockerfile: Dockerfile
+    container_name: eureka-server
+    ports:
+      - "8761:8761"
+    networks:
+      - financial-network
+
+  finance-microservice:
+    build:
+      context: ./FinanceMicroservice
+      dockerfile: Dockerfile
+    container_name: finance-microservice
+    ports:
+      - "8081:8081"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://finance-db:5432/finance_db
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+      - EUREKA_SERVER_URL=http://eureka-server:8761/eureka/
+    depends_on:
+      - eureka-server
+      - finance-db
+    networks:
+      - financial-network
+
+  transaction-microservice:
+    build:
+      context: ./TransactionMicroservice
+      dockerfile: Dockerfile
+    container_name: transaction-microservice
+    ports:
+      - "8082:8082"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://transaction-db:5432/transaction_db
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+      - EUREKA_SERVER_URL=http://eureka-server:8761/eureka/
+    depends_on:
+      - eureka-server
+      - transaction-db
+    networks:
+      - financial-network
+
+  user-microservice:
+    build:
+      context: ./UserMicroservice
+      dockerfile: Dockerfile
+    container_name: user-microservice
+    ports:
+      - "8083:8083"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://user-db:5432/user_db
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+      - EUREKA_SERVER_URL=http://eureka-server:8761/eureka/
+    depends_on:
+      - eureka-server
+      - user-db
+    networks:
+      - financial-network
+
+  api-gateway:
+    build:
+      context: ./ApiGateway
+      dockerfile: Dockerfile
+    container_name: api-gateway
+    ports:
+      - "8080:8080"
+    environment:
+      - EUREKA_SERVER_URL=http://eureka-server:8761/eureka/
+    depends_on:
+      - eureka-server
+      - user-microservice
+      - finance-microservice
+      - transaction-microservice
+    networks:
+      - financial-network
+
+  # PostgreSQL databases for each microservice
+  finance-db:
+    image: postgres:15-alpine
+    container_name: finance-db
+    environment:
+      POSTGRES_DB: finance_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"  # Optional; maps host port 5432 to container's PostgreSQL port
+    volumes:
+      - finance-db-data:/var/lib/postgresql/data
+    networks:
+      - financial-network
+
+  transaction-db:
+    image: postgres:15-alpine
+    container_name: transaction-db
+    environment:
+      POSTGRES_DB: transaction_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5433:5432"  # Maps host port 5433 to container's PostgreSQL port
+    volumes:
+      - transaction-db-data:/var/lib/postgresql/data
+    networks:
+      - financial-network
+
+  user-db:
+    image: postgres:15-alpine
+    container_name: user-db
+    environment:
+      POSTGRES_DB: user_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5434:5432"  # Maps host port 5434 to container's PostgreSQL port
+    volumes:
+      - user-db-data:/var/lib/postgresql/data
+    networks:
+      - financial-network
+
+volumes:
+  finance-db-data:
+  transaction-db-data:
+  user-db-data:
+
+networks:
+  financial-network:
+    driver: bridge

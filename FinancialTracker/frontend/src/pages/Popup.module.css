@@ -1,0 +1,156 @@
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    visibility: hidden; /* Hide by default */
+    opacity: 0; /* Start transparent */
+    transition: visibility 0s, opacity 0.3s ease;
+}
+
+.popup-overlay.active {
+    visibility: visible; /* Show when active */
+    opacity: 1; /* Fade to opaque */
+}
+
+.popup-window {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1001;
+    transition: transform 0.3s ease-out;
+    transform: translateY(-50px); /* Start slightly above the center */
+    height: auto; /* This allows the popup height to grow with the content */
+    max-height: 90%; /* Make sure it doesn't exceed the viewport height */
+    overflow-y: auto;
+}
+
+.popup-window.active {
+    transform: translateY(0); /* Center it when active */
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: transparent;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+.popup-window .form-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.popup-window .form-container label {
+    margin-bottom: 0.5em;
+}
+
+.popup-window .form-container input[type="text"],
+.popup-window .form-container input[type="password"] {
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.popup-window .form-container button {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-top: 1em;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.popup-window .form-container button:hover {
+    background-color: #0056b3;
+}
+
+.popup-window .form-container .signup-link {
+    color: #007bff;
+    text-align: center;
+    margin-top: 1em;
+    text-decoration: none;
+}
+
+.popup-window .form-container .signup-link:hover {
+    text-decoration: underline;
+}
+
+.popup-window .form-container .error-message {
+    color: #dc3545;
+    margin-bottom: 1em;
+    text-align: center;
+}
+.form-container form {
+    width: 100%;
+    /* If you had a fixed height here, remove it to allow content size */
+}
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box; /* So that padding doesn't increase the size */
+    overflow: auto; /* In case the content overflows */
+}
+
+/* Style each form group with labels and inputs */
+.formContainer div {
+    width: 100%; /* Full width */
+    margin-bottom: 10px; /* Spacing between form groups */
+}
+
+.formContainer label {
+    display: block; /* Ensures the label is on its own line */
+    margin-bottom: 5px;
+}
+
+.formContainer input[type="text"],
+.formContainer input[type="password"] {
+    width: 100%; /* Full width */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 1em;
+}
+
+.formContainer button {
+    width: 100%; /* Full width of its container */
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px; /* Adjust font size as needed */
+}
+
+.formContainer button:hover {
+    background-color: #0056b3;
+}
+
+.errorMessage {
+    color: #dc3545; /* This will make the text red */
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+/* You can include other styles from the previous snippets as needed */
