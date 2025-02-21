@@ -1,10 +1,10 @@
 # Finance Tracker
 
-Finance Tracker je aplikace pro sledování vlastních financí, konkrétně peněžních výdajů a příjmů. Hlavním účelem aplikace je usnadnit sledování vlastních financí.
+Finance Tracker is an application for tracking personal finances, specifically expenses and income. The main purpose of the app is to make it easier to track your finances.
 
-GUI prototyp aplikace je [na webu Figma](https://www.figma.com/design/b6HMMEiGKAHWUgCDRkyFf3/Finance-Tracker?node-id=0-1&t=kgO3v3iZLP6BzUfj-1).
+The GUI prototype of the application can be found [on Figma](https://www.figma.com/design/b6HMMEiGKAHWUgCDRkyFf3/Finance-Tracker?node-id=0-1&t=kgO3v3iZLP6BzUfj-1).
 
-# 📌 Použité technologie
+# 📌 Technologies Used
 
 **- Java a Spring Boot**
 
@@ -20,66 +20,95 @@ GUI prototyp aplikace je [na webu Figma](https://www.figma.com/design/b6HMMEiGKA
 
 **- React**
 
-# 📌 Aplikace se skladá ze tří microservis:
+# 📌 The application consists of three microservices:
 
 **1. User Microservice**
 
-- Spravuje registraci, autentizaci a autorizaci uživatelů.
-- Uchovává data o uživatelích, jako je uživatelské jméno, heslo a další informace.
+- Manages user registration, authentication, and authorization.
+- Stores user data such as username, password, and other information.
 
 
 **2. Finance Microservice**
 
-- Zodpovídá za správu finančních cílů a dluhů.
-- Poskytuje API pro práci s finančními cíli a dluhy.
+- Manages financial goals and debts.
+- Provides an API for working with financial goals and debts.
 
 
 **3. Transaction Microservice**
 
-- Spravuje finanční transakce, včetně příjmů a výdajů.
-- Poskytuje API pro přidávání, úpravu, mazání a zobrazování transakcí.
+- Manages financial transactions, including income and expenses.
+- Provides an API for adding, editing, deleting, and displaying transactions.
 
 # 📌 Application Features
-- **🔐 Login/Registration:** Secure authentication system allowing users to sign up and log in.
+##  **🔐 Login/Registration:** Secure authentication system allowing users to sign up and log in.
 
 ![Screenshot 14](images/14.1.png)
-<hr style="border: 0.2px solid #ddd; opacity: 0.2;">
-
+#
 ![Screenshot 15](images/15.png)
-<hr style="border: 0.2px solid #ddd; opacity: 0.2;">
-
+#
 ![Screenshot 16](images/16.png)
-- **💳 Debts:** Track and manage your outstanding debts, including creditors, amounts, and interest rates.
 
-- **🎯 Goals:** Set financial goals and monitor progress toward achieving them.
+![Screenshot 17](images/17.png)
+#
+##  **💳 Debts:** Track and manage your outstanding debts, including creditors, amounts, and interest rates.
 
-- **💰 Expenses/Incomes:** Record and categorize your transactions to keep track of your financial flow.
+![Screenshot 18](images/18.png)
+#
 
-- **📈 Statistics:** View financial insights through charts and summaries.
+##  **🎯 Goals:** Set financial goals and monitor progress toward achieving them.
 
-# 📌 Spuštění:
+![Screenshot 19](images/19.png)
+#
+##  **💰 Expenses/Incomes:** Record and categorize your transactions to keep track of your financial flow.
 
-1. Naklonujte repositář git clone https://github.com/voropali1/finance_tracker.git
+![Screenshot 20](images/20.png)
+#
 
-2. Přepněte do adresáře frontend.
+![Screenshot 21.2](images/21.2.png)
+#
 
-3. Nainstalujte závislosti:
+![Screenshot 21](images/21.png)
+#
+### • There is an option to convert to PDF and Excel.
+![Screenshot 24](images/24.png)
+#
+<p align="center">
+  <img src="images/23.png" alt="Screenshot" />
+</p>
+
+#
+
+##  **📈 Statistics:** View financial insights through charts and summaries.
+
+![Screenshot 22](images/22.png)
+# Use Case Diagram
+![Screenshot 25](images/25.png)
+
+# Diagram component
+![Screenshot 26](images/26.png)
+# 📌  Running the application:
+
+1. Clone the repository git clone https://github.com/voropali1/finance_tracker.git
+
+2. Navigate to the frontend directory.
+
+3. Install dependencies:
 
 ```
 npm install
 npm install recharts
 ```
 
-Přepněte se do hlávního adresáře.
+Go back to the main directory.
 
-4. Build:
+4. Build the application:
 
 `docker-compose build`
 
-5. Spuštění v pozadí:
+5. Run in the background:
 
 `docker-compose up -d`
 
-6. Zastavení a odstranění kontejnerů:
+6. Stop and remove containers:
 
 `docker-compose down`
