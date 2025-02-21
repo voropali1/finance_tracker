@@ -42,8 +42,12 @@ GUI prototyp aplikace je [na webu Figma](https://www.figma.com/design/b6HMMEiGKA
 # 📌 Application Features
 - **🔐 Login/Registration:** Secure authentication system allowing users to sign up and log in.
 
-![Screenshot 14](images/14.png)
+![Screenshot 14](images/14.1.png)
+<hr style="border: 0.2px solid #ddd; opacity: 0.2;">
+
 ![Screenshot 15](images/15.png)
+<hr style="border: 0.2px solid #ddd; opacity: 0.2;">
+
 ![Screenshot 16](images/16.png)
 - **💳 Debts:** Track and manage your outstanding debts, including creditors, amounts, and interest rates.
 
