@@ -82,7 +82,9 @@ The GUI prototype of the application can be found [on Figma](https://www.figma.c
 
 ![Screenshot 22](images/22.png)
 # Use Case Diagram
-![Screenshot 25](images/25.png)
+<p align="center">
+  <img src="images/25.png" alt="Screenshot" />
+</p>
 
 # Diagram component
 ![Screenshot 26](images/26.png)
