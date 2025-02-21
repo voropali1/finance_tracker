@@ -35,7 +35,7 @@ GUI prototyp aplikace je [na webu Figma](https://www.figma.com/design/b6HMMEiGKA
 
 ## Spuštění:
 
-1. Naklonujte repositář git clone git@gitlab.fel.cvut.cz:khusnkar/b6b36pm2.git
+1. Naklonujte repositář git clone https://github.com/voropali1/finance_tracker.git
 
 2. Přepněte do adresáře frontend.
 
