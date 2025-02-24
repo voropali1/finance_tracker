@@ -13,7 +13,7 @@ The GUI prototype of the application can be found [on Figma](https://www.figma.c
 **- REST API**
 
 **- API Gateway**
-
+ 
 **- Eureka**
 
 **- Docker**
